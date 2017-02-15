@@ -1,0 +1,18 @@
+{
+  "name": "resume-portfolio",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "modernizr": "~2.8.1",
+    "materialize": "^0.98.0",
+    "d3": "~3.5.17",
+    "openui5-sap.ui.core": "openui5/packaged-sap.ui.core#^1.44.7"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "resolutions": {
+    "d3": "~3.5.17"
+  }
+}
