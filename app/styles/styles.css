@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 body {
 	font: 100% Arial, Sans Serif;
 	/*height: 100vh;*/
