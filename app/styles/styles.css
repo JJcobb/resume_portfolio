@@ -281,6 +281,8 @@ rect {
 
 .section {
 	z-index: -2;
+
+	padding: 0;
 }
 
 .section-title {
@@ -302,4 +304,86 @@ rect {
     left: 0;
     right: 0;
     margin: auto;
+}
+
+
+
+
+
+path {
+  cursor: pointer;
+  stroke: #263238;
+  stroke-width: 5px;
+}
+
+#pieChart {
+  /* border: red 1px dotted; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  padding-left: 2em;
+
+}
+
+#pieChart svg {
+	opacity: 0.8;
+}
+
+#pieText {
+	padding-right: 2em;
+}
+
+.text-container {
+   /*border: 1px dotted; */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+#segmentText {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+#segmentText {
+	-webkit-animation-delay: 5s;
+    animation-delay: 5s;
+}
+
+
+@media(max-width:767px) {
+
+	#pieChart {
+		transform: rotate(90deg);
+		transform-origin: 50% 50%;
+		transition: 1s;
+		max-width: 50%;
+	} 
+
+	.text-container { 
+		width: 100%; 
+		min-height: 0; 
+	}
+
+} 
+
+@media(min-width:768px) {
+
+	#pieChart {
+		transition: 1s;
+	}
+
+}
+
+
+.collection .collection-item {
+	background-color: transparent;
 }

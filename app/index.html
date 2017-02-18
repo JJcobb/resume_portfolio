@@ -18,6 +18,7 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/styles.css">
     <!-- endbuild -->
@@ -35,6 +36,58 @@
 
     
     <div id="fullpage">
+
+
+      <div class="section blue-grey darken-4">
+        
+
+        <!--<div class="row">
+
+          <div class="col s12">
+
+            <h2 class="section-title section-title-center" id="dataSelection">Education</h2>
+
+          </div>
+
+        </div>-->
+
+
+        <div class="row" id="dataSelection">
+
+          <div class="col s6 animated rollIn" id="pieChart"></div>
+
+          <div class="col s6 text-container" id="pieText">
+
+            <h2 class="section-title">Education</h2>
+
+            <!--<h2 id="segmentTitle">
+              University of Central Florida
+              <br>
+              <span style="font-size: 0.5em;">B.A. Digital Media: Web Design</span>
+              <br>
+              <span style="font-size: 0.5em;">Minor &ndash; Marketing</span>
+            </h2>-->
+
+            <div id="segmentTitle">
+              <h3>
+                University of Central Florida
+              </h3>
+              <hr>
+              <h4>B.A. Digital Media: Web Design</h4>
+              <h4>Minor &ndash; Marketing</h4>
+              <h5>GPA &ndash; 3.9</h5>
+            </div>
+
+            <p id="segmentText"><span class="animated shake">&larr; Click one of the segments</span></p>
+
+            <a id="resetPie" class="btn-floating btn-large waves-effect grey lighten-2"><i class="material-icons blue-grey-text text-darken-4">replay</i></a>
+
+          </div>
+
+        </div>
+
+
+      </div>
 
 
       <div class="section blue">
@@ -55,7 +108,7 @@
       </div>
 
 
-      <div class="section cyan">
+      <div class="section green darken-2">
 
         <div class="row">
 
@@ -75,7 +128,7 @@
       </div>
 
 
-      <div class="section cyan">
+      <div class="section green darken-3">
 
         <div class="row">
 
@@ -122,6 +175,7 @@
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->
+    <script src="scripts/pie-chart.js"></script>
     <script src="scripts/word-clouds.js"></script>
     <script src="scripts/tree.js"></script>
     <script src="scripts/main.js"></script>

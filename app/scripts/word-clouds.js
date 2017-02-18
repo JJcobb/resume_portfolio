@@ -5,8 +5,8 @@ var sortDir = false;
 var h = 300;*/
 
 
+
 var dataset = [
-	/*{ 'name': 'My Skills', 'rank': 10 },*/
 	{ 'name': 'JavaScript', 'rank': 6 },
 	{ 'name': 'PHP', 'rank': 4 },
 	{ 'name': 'WordPress', 'rank': 7 },
@@ -20,6 +20,7 @@ var dataset = [
 	{ 'name': 'Git', 'rank': 2 },
 	{ 'name': 'Photoshop', 'rank': 8 }
 ];
+
 
 
 //creates a scale suitable for something with ordinal (ordered) value
@@ -64,7 +65,7 @@ d3.select('#sky-container')
 
    })
    .style('top', function(d, i) {
-   		return i*50 + 'px';
+   		return i*(window.innerHeight/13.87) + 'px';      /* Distance from top | was 50  |  46  */
    })
    .style('animation-duration', function(d, i) {
 

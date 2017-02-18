@@ -1,5 +1,12 @@
 $(function() {
 
-	$('#fullpage').fullpage();
+	/* Page layout */
+	$('#fullpage').fullpage({
+
+		navigation: true
+
+	});
+
+	
 
 });

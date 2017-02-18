@@ -1,7 +1,7 @@
 sap.ui.core.Control.extend('dennisseah.OrgChart', {
     metadata: {
       properties: {
-        width: {type: 'int', defaultValue: 1000},
+        width: {type: 'int', defaultValue: window.innerWidth},
         height: {type: 'int', defaultValue: 600}
       }
     },
@@ -64,7 +64,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
             .on("zoom", redraw))*/
       .append('g')
       .attr('class', 'tree-container')
-      .attr('transform', 'translate(' + (this.getWidth() /2) + ',' + 0 + ')');  /* SVG container positioning */
+      .attr('transform', 'translate(' + ( (this.getWidth() / 2) - (rectW / 2) ) + ',' + 0 + ')');  /* SVG container positioning */
 
       /*zm.translate([50, 20]);*/
 
