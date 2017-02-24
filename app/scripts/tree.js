@@ -62,9 +62,19 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
       .attr('height', this.getHeight())
       /*.call(zm = d3.behavior.zoom().scaleExtent([1,3])
             .on("zoom", redraw))*/
+      .attr('version', '1.1')
+      .attr('xmlns', 'http://www.w3.org/2000/svg')
+      .attr('xmlns:xlink', 'http://www.w3.org/1999/xlink')
       .append('g')
       .attr('class', 'tree-container')
-      .attr('transform', 'translate(' + ( (this.getWidth() / 2) - (rectW / 2) ) + ',' + 0 + ')');  /* SVG container positioning */
+      .attr('transform', 'translate(' + ( (this.getWidth() / 2) - (rectW / 2) ) + ',' + 0 + ')');   /* SVG container positioning */
+  
+
+      /*svg.append('image')
+      .attr('xlink:href', 'images/ontarget-logo-white.png')
+      .attr('x', '-150px')
+      .attr('y', '0')
+      .attr('width', '500px');*/
 
       /*zm.translate([50, 20]);*/
 
@@ -97,6 +107,26 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
           return d.id || (d.id = ++i);
         });
 
+
+
+        /*node.enter().append('image')
+        .attr('xlink:href', function(d){
+          return d.image;
+        })
+        .attr('x', '-150px')
+        .attr('y', '0')
+        .attr('width', '500px');*/
+
+
+        node.enter().append('image')
+        .attr('xlink:href', function (d){
+          return d.image;
+        })
+        .attr('x', '-150px')
+        .attr('y', '0')
+        .attr('width', '500px');
+
+
         // Enter any new nodes at the parent's previous position.
         var nodeEnter = node.enter().append('g')
         .attr('class', 'node')
@@ -122,6 +152,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
         .attr('y', rectH / 2)
         .attr('dy', '.35em')
         .attr('text-anchor', 'middle')
+        .attr('fill', 'white')
         .text(function (d) {
           return d.name;
         });
@@ -137,9 +168,12 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
         .attr('width', rectW)
         .attr('height', rectH)
         .attr('stroke', 'black')
-        .attr('stroke-width', 1)
+        .attr('stroke-width', 5)
         .style('fill', function (d) {
-          return d._children ? '#85ff77' : 'rgba(255, 255, 255, 0.8)';   /***** Colors of circles  ******/
+          return d._children ? 'transparent' : 'transparent';   /***** Colors of circles  ******/
+        })
+        .style('stroke', function (d) {
+          return d._children ? 'white' : 'white';   /***** Colors of circles  ******/
         });
 
         nodeUpdate.select('text')
@@ -285,6 +319,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
   var org_chart = new dennisseah.OrgChart();
   org_chart.setRoot({
     name: 'On Target',
+    image: 'images/ontarget-logo-white.png',
     children: [
       {name: 'Intern / Production Asst.', children : [
         {name:'Wordpress Updates'},
@@ -300,6 +335,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
     var org_chart = new dennisseah.OrgChart();
   org_chart.setRoot({
     name: 'ROAR!',
+    image: 'images/roar-logo2.png',
     children: [
       {name: 'Intern', children : [
         {name:'Responsive Conversion'},

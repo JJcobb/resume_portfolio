@@ -230,6 +230,8 @@ body {
 
 .sapUiBody {
 	background-color: transparent !important;
+
+	padding-top: 5em;
 }
 
 .dennisseah-orgchart .node {
@@ -260,6 +262,11 @@ rect {
 	stroke: transparent;
 }
 
+
+g.tree-container g.node[transform="translate(0,0)"] {
+
+	display: none;
+}
 
 
 
@@ -303,6 +310,15 @@ rect {
     height: 160px;
     top: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.section-title-top {
+	position: absolute;
+    height: 160px;
+    top: 0;
     left: 0;
     right: 0;
     margin: auto;
@@ -393,8 +409,6 @@ path {
 
 
 
-
-
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -416,4 +430,51 @@ path {
   direction: ltr;
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+.scroll-down {
+	position: absolute;
+	bottom: 10%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 24px;
+	height: 24px;
+	border-left: 1px solid #333;
+	border-bottom: 1px solid #333;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-animation: scroll-down 2s infinite;
+	animation: scroll-down 2s infinite;
+	box-sizing: border-box;
+}
+@-webkit-keyframes scroll-down {
+	0% {
+		-webkit-transform: rotate(-45deg) translate(0, 0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: rotate(-45deg) translate(-20px, 20px);
+		opacity: 0;
+	}
+}
+@keyframes scroll-down {
+	0% {
+		transform: rotate(-45deg) translate(0, 0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: rotate(-45deg) translate(-20px, 20px);
+		opacity: 0;
+	}
 }
