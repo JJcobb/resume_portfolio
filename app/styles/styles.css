@@ -11,6 +11,20 @@ body {
 	/*background: #00b4ff;*/
 }
 
+.my-cyan {
+	background-color: #00C8DF;
+}
+
+.my-green {
+	background-color: #448528;
+}
+
+.my-teal {
+	background-color: #0fa6a0;
+}
+
+
+
 #sky-container {
 	color: #333;
     /*bottom: 0;
@@ -269,6 +283,12 @@ g.tree-container g.node[transform="translate(0,0)"] {
 }
 
 
+.node-flash {
+	-webkit-animation-duration: 3.5s;
+	animation-duration: 3.5s;
+}
+
+
 
 
 .row {
@@ -330,7 +350,7 @@ g.tree-container g.node[transform="translate(0,0)"] {
 
 path {
   cursor: pointer;
-  stroke: #263238;
+  stroke: #212121;
   stroke-width: 5px;
 }
 
@@ -478,3 +498,170 @@ path {
 		opacity: 0;
 	}
 }
+
+
+
+.fp-controlArrow.fp-prev {
+	width: 35px;
+    height: 35px;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: rotate(45deg);
+    border-right: 0;
+    border-top: 0;
+    border-width: 5px;
+    left: 20%;
+}
+
+.fp-controlArrow.fp-next {
+	width: 35px;
+    height: 35px;
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+    transform: rotate(45deg);
+    border-left: 0;
+    border-bottom: 0;
+    border-width: 5px;
+    right: 20%;
+}
+
+
+
+.carousel {
+	height: 600px;
+}
+
+.carousel .carousel-item {
+	width: 400px;
+	height: 300px;
+}
+
+.carousel .indicators .indicator-item {
+	width: 15px;
+	height: 15px;
+	background-color: rgba(51, 51, 51, 0.5);
+	/*border-radius: 1px;*/
+}
+
+.carousel .indicators .indicator-item.active {
+	background-color: #333;
+}
+
+
+
+.modal {
+	width: 80%;
+	top: 0 !important;
+	bottom: 0;
+	max-height: 90%;
+}
+
+
+.modal-header {
+    /*padding: 1em;
+    background-color: #00c8df;
+    color: white;*/
+    text-align: center;
+}
+
+.modal-header .modal-title {
+    margin-bottom: 0;
+    padding: 0.5em;
+    color: white;
+}
+
+
+.modal .modal-content {
+	padding-top: 15px;
+}
+
+
+.modal.modal-fixed-footer {
+	height: inherit;
+}
+
+
+
+
+.quote-right {
+	padding-right: 1.5rem;
+	padding-left: 0;
+
+    border-right: 5px solid #ee6e73;
+    border-left: 0;
+
+    text-align: right;
+}
+
+
+#modal-oconee blockquote {
+	border-color: #89725b;
+}
+
+#modal-coa blockquote {
+	border-color: #0fa6a0;
+}
+
+
+
+.switch-sides:nth-of-type(even) .col:first-of-type {
+
+	float: right;
+}
+
+.switch-sides:nth-of-type(even) .col:last-of-type {
+
+	float: left;
+}
+
+.switch-sides:nth-of-type(even) blockquote {
+
+	padding-right: 1.5rem;
+	padding-left: 0;
+
+    border-right: 5px solid #ee6e73;
+    border-left: 0;
+
+    text-align: right;
+}
+
+
+.image-arrow {
+	font-size: 1.5em;
+    margin: 0.25em;
+}
+
+
+
+/* label color */
+/*.input-field label {
+	color: #000;
+}*/
+
+/* label focus color */
+.input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+	color: #333;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus, .input-field input[type=email]:focus,  textarea.materialize-textarea:focus:not([readonly]) {
+	border-bottom: 1px solid #333;
+	box-shadow: 0 1px 0 0 #333;
+}
+
+/* valid color */
+/*.input-field input[type=text].valid {
+	border-bottom: 1px solid #000;
+	box-shadow: 0 1px 0 0 #000;
+}*/
+
+/* invalid color */
+/*.input-field input[type=text].invalid {
+	border-bottom: 1px solid #000;
+	box-shadow: 0 1px 0 0 #000;
+}*/
+
+/* icon prefix focus color */
+/*.input-field .prefix.active {
+	color: #000;
+}*/

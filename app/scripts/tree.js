@@ -36,7 +36,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
 
       var i = 0,
           duration = 750,
-          rectW = 200,                                                   /*  Width and Height  */
+          rectW = 250,                                                   /*  Width and Height  */
           rectH = 100; /****************** was 50 *********************/
 
       var tree = d3.layout.tree().nodeSize([70]);
@@ -122,7 +122,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
         .attr('xlink:href', function (d){
           return d.image;
         })
-        .attr('x', '-150px')
+        .attr('x', '-125px')
         .attr('y', '0')
         .attr('width', '500px');
 
@@ -161,7 +161,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
         var nodeUpdate = node.transition()
         .duration(duration)
         .attr('transform', function (d, i) {
-          return 'translate(' + (d.x*3) + ',' + d.y/1.5 + ')';  /********** Space between them *************/
+          return 'translate(' + (d.x*4) + ',' + d.y/1.5 + ')';  /********** Space between them *************/
         });
 
         nodeUpdate.select('rect')
@@ -174,6 +174,9 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
         })
         .style('stroke', function (d) {
           return d._children ? 'white' : 'white';   /***** Colors of circles  ******/
+        })
+        .attr('class', function (d) {
+          return d._children ? 'animated flash infinite node-flash' : '';
         });
 
         nodeUpdate.select('text')
@@ -324,7 +327,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
       {name: 'Intern / Production Asst.', children : [
         {name:'Wordpress Updates'},
         {name:'Custom Themes'},
-        {name:'Infographics'},
+        {name:'Front-end Dev'},
       ]
       }
     ]
@@ -340,7 +343,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
       {name: 'Intern', children : [
         {name:'Responsive Conversion'},
         {name:'ASP.NET Updates'},
-        {name:'MailChimp Emails'},
+        {name:'HTML Emails'},
       ]
       }
     ]
