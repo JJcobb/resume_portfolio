@@ -521,7 +521,7 @@ path {
     transform: rotate(45deg);
     border-left: 0;
     border-bottom: 0;
-    border-width: 5px;
+    border-width: 5px !important;
     right: 20%;
 }
 
