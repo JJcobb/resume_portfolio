@@ -1,4 +1,4 @@
-/*$(document).ready(function() {*/
+$(document).ready(function() {
 
 	/* Page layout */
 	$('#fullpage').fullpage({
@@ -17,40 +17,44 @@
 
     //$('.carousel.carousel-slider').carousel({fullWidth: true});
 
+
+    /* Materialize Modal */
     $('.modal').modal({
 
     });
 
-    //$.fn.fullpage.setAllowScrolling(false);
 
 
+    $('#contact-form').on('submit', function(e){
 
-    /*$('#modal-scoop').openModal({
+		e.preventDefault();
 
-    	ready: function(modal, trigger) {
+		var form = $(this);
 
-	        console.log("Modal Opened");
-
-	        $.fn.fullpage.setAllowScrolling(false);
-
-	    },
-	    complete: function() { 
-
-	    	console.log("Modal Closed");
-
-	    	$.fn.fullpage.setAllowScrolling(true); 
-	    }
-
-    });*/
+		$(form).fadeOut(500, function(){
 
 
-    /*var onModalHide = function() {
-    alert("Modal closed!");
-	};
+            Materialize.toast('Thanks for contacting! We will be in touch soon.', 4000, 'dialog-center', function(){
 
-	$("#modal-scoop").openModal({
-	    complete : onModalHide
+            	$(form).find(':input').val('');
+
+				$(form).fadeIn(500);    
+
+				$("#toast-container").toggle();
+
+            });
+        });
+
+	});
+
+
+	/*$('.carousel-item').on('hover', function(){
+
+		$(this).filter('.active').addClass('tooltipped');
 	});*/
 
+	
 
-/*);*/
+
+
+});

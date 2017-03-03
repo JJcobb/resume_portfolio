@@ -432,7 +432,7 @@
     <div id="fullpage">
 
 
-      <div class="section grey lighten-4">
+      <div class="section grey lighten-4" data-tooltip="Jacob Vogelbacher">
         
 
         <div class="row">
@@ -457,7 +457,7 @@
       </div>
 
 
-      <div class="section grey darken-4" id="education">
+      <div class="section grey darken-4" data-tooltip="Education">
         
 
         <!--<div class="row">
@@ -509,7 +509,7 @@
       </div>
 
 
-      <div class="section blue">
+      <div class="section blue" data-tooltip="Skills">
 
         <div class="row">
 
@@ -567,7 +567,7 @@
 
 
       <!-- Horizontal sliding experience section -->
-      <div class="section orange">
+      <div class="section orange" data-tooltip="Experience">
 
         <div class="row">
           <div class="col s12">
@@ -614,7 +614,7 @@
       </div>
 
 
-      <div class="section grey darken-4">
+      <div class="section grey darken-4" data-tooltip="Portfolio">
 
 
         <div class="row">
@@ -651,9 +651,19 @@
 
 
             <div class="carousel">
-              <a class="carousel-item" href="#modal-scoop"><img src="images/scoop-home.png"></a>
-              <a class="carousel-item" href="#modal-oconee"><img src="images/oconee-home.png"></a>
-              <a class="carousel-item" href="#modal-coa"><img src="images/coa-home.png"></a>
+
+              <a class="carousel-item tooltipped" data-position="bottom" data-delay="400" data-tooltip="View Project" href="#modal-scoop">
+                <img src="images/scoop-home.png">
+              </a>
+
+              <a class="carousel-item tooltipped" data-position="bottom" data-delay="400" data-tooltip="View Project" href="#modal-oconee">
+                <img src="images/oconee-home.png">
+              </a>
+
+              <a class="carousel-item tooltipped" data-position="bottom" data-delay="400" data-tooltip="View Project" href="#modal-coa">
+                <img src="images/coa-home.png">
+              </a>
+
             </div>
 
 
@@ -665,7 +675,7 @@
       </div>
 
 
-      <div class="section grey lighten-4">
+      <div class="section grey lighten-4" data-tooltip="Contact">
 
 
         <div class="row">
@@ -680,39 +690,43 @@
           <div class="col s8 offset-s2">
 
 
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="name" type="text" class="validate">
-                <label for="name">Name</label>
-              </div>
-            </div>
+            <form action="process-contact.php" method="post" id="contact-form">
 
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email">Email</label>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="name" type="text" class="validate">
+                  <label for="name">Name</label>
+                </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="subject" type="text" class="validate">
-                <label for="subject">Subject</label>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" class="validate">
+                  <label for="email">Email</label>
+                </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea id="message" class="materialize-textarea" data-length="1500"></textarea>
-                <label for="message">Message</label>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="subject" type="text" class="validate">
+                  <label for="subject">Subject</label>
+                </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="col s12 center-align">
-                <button class="btn waves-effect waves-light grey darken-4" type="submit" name="action">Send</button>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="message" class="materialize-textarea" data-length="1500"></textarea>
+                  <label for="message">Message</label>
+                </div>
               </div>
-            </div>
+
+              <div class="row">
+                <div class="col s12 center-align">
+                  <button class="btn waves-effect waves-light grey darken-4" type="submit" name="action">Send</button>
+                </div>
+              </div>
+
+            </form>
 
 
           </div>
