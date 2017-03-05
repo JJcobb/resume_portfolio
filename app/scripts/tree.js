@@ -198,7 +198,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
 
           if( $(window).width() < 700 ){
 
-            console.log("d.name: " + d.name + " | i: " + i);
+            console.log('d.name: ' + d.name + ' | i: ' + i);
 
             if(d.name != 'ROAR!' && d.name != 'On Target' && d.name != 'Intern' && d.name != 'Intern / Production Asst.'){
               var vertical_spacing = i*60 - 100;
@@ -225,7 +225,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
         .attr('width', rectW)
         .attr('height', rectH)
         .attr('stroke', 'black')
-        .attr('stroke-width', 5)
+        .attr('stroke-width', 4)
         .style('fill', function (d) {
           return d._children ? 'transparent' : 'transparent';   /***** Colors of circles  ******/
         })
