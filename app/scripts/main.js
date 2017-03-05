@@ -192,4 +192,17 @@ $(document).ready(function() {
 		$('#resetPie').removeClass('btn-large').addClass('btn-med');
 	};
 
+
+
+	if( $(window).width() < 700 ){
+
+		$('.carousel .carousel-item')
+			.removeClass('tooltipped')
+			.attr('data-position', '')
+			.attr('data-delay', '')
+			.attr('data-tooltip', '')
+			.attr('data-tooltip-id', '');
+
+	}
+
 });

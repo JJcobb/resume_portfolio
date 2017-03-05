@@ -3,7 +3,7 @@ $(document).ready(function() {
 var data_V1 = [{
   'Type': '<h3>Web Development</h3>',
   'Amount': 65,
-  'Description': '<ul class="collection"><li class="collection-item">Front-end Design / Development</li><li class="collection-item">Back-end Development</li><li class="collection-item">User-centered Design</li><li class="collection-item">Content Management Systems</li></ul>'
+  'Description': '<ul class="collection"><li class="collection-item">Front-end Design / Development</li><li class="collection-item">Back-end Development</li><li class="collection-item">Content Management Systems</li></ul>'
 }, {
   'Type': '<h3>Marketing</h3>',
   'Amount': 20,

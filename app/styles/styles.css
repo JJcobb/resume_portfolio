@@ -1021,15 +1021,19 @@ path {
 		overflow: hidden;
 	}
 
-	/*.carousel .indicators .indicator-item {
-		margin-top: 0;
-		margin-bottom: 0;
-	}*/
+	.carousel .indicators {
+		bottom: 5%;
+	}
+
+	.material-tooltip {
+		display: none !important;
+	}
 
 
 	button[type="submit"] {
 		width: 100%;
 	}
+
 
 }
 
