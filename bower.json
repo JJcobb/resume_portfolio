@@ -8,7 +8,9 @@
     "openui5-sap.ui.core": "openui5/packaged-sap.ui.core#^1.44.7",
     "materialize": "^0.98.0",
     "fullpage.js": "^2.9.2",
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "letteringjs": "Lettering.js#^0.7.0",
+    "textillate": "^0.4.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

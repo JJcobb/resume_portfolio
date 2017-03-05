@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 var data_V1 = [{
   'Type': '<h3>Web Development</h3>',
   'Amount': 65,
@@ -43,7 +45,17 @@ var data = [{
   'values': data_V1
 }]
 
-var width = parseInt(d3.select('#pieChart').style('width'), 10);
+if( $('#pieChart').css('max-width') != '100%' ){
+
+var width = parseInt(d3.select('#pieChart').style('width'), 10);   /* thickness of donut  */
+
+}
+else{
+
+var width = parseInt(d3.select('#pieChart').style('width'), 15);   /* thickness of donut: mobile */
+
+}
+
 var height = width;
 var radius = (Math.min(width, height) - 80) / 2;    /* 20 */
 
@@ -70,6 +82,9 @@ var arcOver = d3.svg.arc()
   .outerRadius(radius + 10)
   .innerRadius(150);
 
+
+if( $('#pieChart').css('max-width') != '100%' ){
+
 var svg = d3.select('#pieChart').append('svg')
   .attr('width', '100%')
   .attr('height', window.innerHeight)
@@ -78,6 +93,22 @@ var svg = d3.select('#pieChart').append('svg')
   .attr('preserveAspectRatio', 'xMinYMin')
   .append('g')
   .attr('transform', 'translate(' + radius + ',' + height / 2 + ')');
+
+}
+else {
+
+radius = (Math.min(width, height) - 20) / 2;
+
+var svg = d3.select('#pieChart').append('svg')
+  .attr('width', '100%')
+  .attr('height', window.innerHeight/2)
+  /*.attr('height', '75vh')*/
+  .attr('viewBox', '0 0 ' + Math.min(width, height) + ' ' + Math.min(width, height))
+  .attr('preserveAspectRatio', 'xMinYMin')
+  .append('g')
+  .attr('transform', 'translate(' + radius + ',' + height / 2 + ')');
+
+}
 
   /*.append('text')
   .attr('x', '-13%')
@@ -187,7 +218,7 @@ function changeData() {
   $('.text-container').hide();
   $('#resetPie').hide();
   //$('#segmentTitle').replaceWith('<h1 id="segmentTitle">Select Segment</h1>');
-  $('#')
+  $('#');
  // $('#segmentText').replaceWith('<p id="segmentText">Lots of text...</p>');
   $('.text-container').fadeIn(400);
 
@@ -210,7 +241,7 @@ $('#resetPie').on('click', function(){
 
   changeData();
 
-  $('#segmentTitle h3').text('University of Central Florida');
+  $('#segmentTitle h3').html('<span id="school">University of Central Florida</span>');
 
   $('#segmentTitle').append('<hr><h4>B.A. Digital Media: Web Design</h4>');
 
@@ -218,10 +249,14 @@ $('#resetPie').on('click', function(){
 
   $('#segmentTitle').append('<h5>GPA &ndash; 3.9</h5>');
 
-  $('#segmentText').html('&larr; Click one of the segments');
+  $('#segmentText').html('<span class="arrow">&larr;</span> Click one of the segments');
 
 });
 
 
 
 /*document.querySelector('style').textContent += '@media(max-width:767px) {#pieChart { transform: rotate(90deg); transform-origin: 50% 50%; transition: 1s; max-width: 50%; } .text-container { width: 100%; min-height: 0; }} @media(min-width:768px) {#pieChart { transition: 1s;}}'*/
+
+
+
+});

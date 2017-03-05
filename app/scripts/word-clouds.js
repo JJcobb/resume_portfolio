@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 //Width and height - controls how much space we'll let the chart have
 var sortDir = false;
 
@@ -9,9 +11,11 @@ var h = 300;*/
 var dataset = [
 	{ 'name': 'JavaScript', 'rank': 6 },
 	{ 'name': 'PHP', 'rank': 4 },
-	{ 'name': 'WordPress', 'rank': 7 },
+	
 	{ 'name': 'CSS', 'rank': 9 },
+
 	{ 'name': 'MailChimp', 'rank': 2 },
+   { 'name': 'WordPress', 'rank': 7 },
 	{ 'name': 'jQuery', 'rank': 4 },
 	{ 'name': 'MySQL', 'rank': 7 },
 	{ 'name': 'D3', 'rank': 1 },
@@ -91,3 +95,5 @@ d3.select('#sky-container')
    .html(function(d) {
    		return d.name;
    });
+
+});

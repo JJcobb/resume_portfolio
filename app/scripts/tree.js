@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 sap.ui.core.Control.extend('dennisseah.OrgChart', {
     metadata: {
       properties: {
@@ -36,8 +38,15 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
 
       var i = 0,
           duration = 750,
-          rectW = 250,                                                   /*  Width and Height  */
-          rectH = 100; /****************** was 50 *********************/
+          rectW = 250;                                                   /*  Width and Height  */
+      var rectH = 100; /****************** was 50 *********************/
+
+      if( $(window).width() < 700 ){
+        rectH = 60;
+        rectW = 230;
+      }
+
+
 
       var tree = d3.layout.tree().nodeSize([70]);
 
@@ -68,6 +77,11 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
       .append('g')
       .attr('class', 'tree-container')
       .attr('transform', 'translate(' + ( (this.getWidth() / 2) - (rectW / 2) ) + ',' + 0 + ')');   /* SVG container positioning */
+
+      if( $(window).width() < 700 ){
+
+        $('#experience svg > g').attr('transform', 'translate(' + ( (this.getWidth() / 2) - ((rectW+20) / 2) ) + ',' + 0 + ')');
+      }
   
 
       /*svg.append('image')
@@ -118,13 +132,23 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
         .attr('width', '500px');*/
 
 
+                                        /********** Width of logo if mobile **********/
+        if( $(window).width() < 700 ){
+          var image_width = '300px';
+          var image_x = '-35px';
+        }
+        else {
+          var image_width = '500px';
+          var image_x = '-125px';
+        }
+
         node.enter().append('image')
         .attr('xlink:href', function (d){
           return d.image;
         })
-        .attr('x', '-125px')
+        .attr('x', image_x)   /* -125px */
         .attr('y', '0')
-        .attr('width', '500px');
+        .attr('width', image_width);  /* 500px */
 
 
         // Enter any new nodes at the parent's previous position.
@@ -136,13 +160,23 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
         .on('click', click);
 
 
+        if( $(window).width() < 700 ){
+
+          var border_radius = 20;
+        }
+        else {
+
+          var border_radius = 50;
+        }
+
+
         nodeEnter.append('rect')
         .attr('width', rectW)
         .attr('height', rectH)
         .attr('stroke', 'black')
         .attr('stroke-width', 1)
-        .attr('rx', 50)   /************** was 25 *****************/      /* Border radius */
-        .attr('ry', 50)   /************** was 25 *****************/
+        .attr('rx', border_radius)   /************** was 25 *****************/      /* Border radius */
+        .attr('ry', border_radius)   /************** was 25 *****************/
         .style('fill', function (d) {
           return d._children ? '#85ff77' : '#fff';
         });
@@ -161,7 +195,30 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
         var nodeUpdate = node.transition()
         .duration(duration)
         .attr('transform', function (d, i) {
-          return 'translate(' + (d.x*4) + ',' + d.y/1.5 + ')';  /********** Space between them *************/
+
+          if( $(window).width() < 700 ){
+
+            console.log("d.name: " + d.name + " | i: " + i);
+
+            if(d.name != 'ROAR!' && d.name != 'On Target' && d.name != 'Intern' && d.name != 'Intern / Production Asst.'){
+              var vertical_spacing = i*60 - 100;
+            }
+            else if(d.name == 'Intern' || d.name == 'Intern / Production Asst.'){
+              var vertical_spacing = -50;
+            }
+            else{
+              var vertical_spacing = 0;
+            }
+
+            return 'translate(' + 0 + ',' + ((d.y/1.5) + vertical_spacing) + ')';
+
+          }
+          
+          else{
+
+            return 'translate(' + (d.x*4) + ',' + d.y/1.5 + ')';  /********** Space between them *************/
+          }       
+          
         });
 
         nodeUpdate.select('rect')
@@ -349,3 +406,5 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
     ]
   });
   org_chart.placeAt('exp2');
+
+});
