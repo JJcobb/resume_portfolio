@@ -34,6 +34,24 @@
     <![endif]-->
 
 
+    <!-- Loader -->
+    <div id="loader">
+
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-black">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END Loader -->
+
 
     <!-- Portfolio Modals -->
 
@@ -715,32 +733,32 @@
           <div class="col s12 m8 offset-m2">
 
 
-            <form action="process-contact.php" method="post" id="contact-form">
+            <form action="process_email.php" method="post" id="contact-form">
 
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="name" type="text" class="validate">
+                  <input id="name" name="name" type="text" class="validate">
                   <label for="name">Name</label>
                 </div>
               </div>
 
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="email" type="email" class="validate">
+                  <input id="email" name="email" type="email" class="validate">
                   <label for="email">Email</label>
                 </div>
               </div>
 
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="subject" type="text" class="validate">
+                  <input id="subject" name="subject" type="text" class="validate">
                   <label for="subject">Subject</label>
                 </div>
               </div>
 
               <div class="row">
                 <div class="input-field col s12">
-                  <textarea id="message" class="materialize-textarea" data-length="1500"></textarea>
+                  <textarea id="message" name="message" class="materialize-textarea" data-length="1500"></textarea>
                   <label for="message">Message</label>
                 </div>
               </div>

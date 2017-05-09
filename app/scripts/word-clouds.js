@@ -11,17 +11,15 @@ var h = 300;*/
 var dataset = [
 	{ 'name': 'JavaScript', 'rank': 6 },
 	{ 'name': 'PHP', 'rank': 4 },
-	
 	{ 'name': 'CSS', 'rank': 9 },
-
-	{ 'name': 'MailChimp', 'rank': 2 },
+	{ 'name': 'Gulp', 'rank': 1 },
    { 'name': 'WordPress', 'rank': 7 },
-	{ 'name': 'jQuery', 'rank': 4 },
+	{ 'name': 'jQuery', 'rank': 6 },
 	{ 'name': 'MySQL', 'rank': 7 },
-	{ 'name': 'D3', 'rank': 1 },
+	{ 'name': 'APIs', 'rank': 1 },
 	{ 'name': 'HTML5', 'rank': 10 },
-	{ 'name': 'ActionScript', 'rank': 6 },
-	{ 'name': 'Git', 'rank': 2 },
+	{ 'name': 'AJAX', 'rank': 6 },
+	{ 'name': 'Git', 'rank': 1 },
 	{ 'name': 'Photoshop', 'rank': 8 }
 ];
 

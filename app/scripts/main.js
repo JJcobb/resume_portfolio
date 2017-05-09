@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+	/* Remove loader */
+	$('#loader').fadeOut(400, function(){
+		$('#loader').remove();
+	});
+
+
+
 	/* Page layout */
 	$('#fullpage').fullpage({
 
@@ -71,6 +78,52 @@ $(document).ready(function() {
 
 		var form = $(this);
 
+
+
+		/*var post_url = form.attr('action');
+
+	    var post_data = form.serialize();
+
+	    $.ajax({
+	        type: 'POST',
+	        url: post_url,
+	        data: post_data,
+	        success: function(msg) {
+
+        		if(msg == 'Success'){
+
+
+        			$(form).fadeOut(500, function(){
+
+			            Materialize.toast('Thanks for contacting! We will be in touch soon.', 4000, 'dialog-center', function(){
+
+			            	$(form).find(':input').val('').removeClass('valid');
+
+							$(form).fadeIn(500);    
+
+							$('#toast-container').toggle();
+
+			            });
+			        });
+
+
+        		}
+        		else if(msg == 'Email error'){
+
+        			Materialize.toast('Error. Please enter a valid email address.', 4000, 'dialog-center');
+        		}
+        		else if(msg == 'Error'){
+
+        			Materialize.toast('Sorry! There was an error submitting the form. Please try again...', 4000, 'dialog-center');
+        		}
+
+
+	        }
+	    });*/
+
+
+
+
 		$(form).fadeOut(500, function(){
 
             Materialize.toast('Thanks for contacting! We will be in touch soon.', 4000, 'dialog-center', function(){
@@ -83,6 +136,9 @@ $(document).ready(function() {
 
             });
         });
+
+
+
 
 
 		/*$('.validate', this).each(function(){

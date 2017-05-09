@@ -74,6 +74,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
       .attr('version', '1.1')
       .attr('xmlns', 'http://www.w3.org/2000/svg')
       .attr('xmlns:xlink', 'http://www.w3.org/1999/xlink')
+      //.attr('viewBox', '0 0 ' + window.innerWidth + ' 600')
       .append('g')
       .attr('class', 'tree-container')
       .attr('transform', 'translate(' + ( (this.getWidth() / 2) - (rectW / 2) ) + ',' + 0 + ')');   /* SVG container positioning */
@@ -135,15 +136,34 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
                                         /********** Width of logo if mobile **********/
         if( $(window).width() < 700 ){
           var image_width = '300px';
+          var image_width_number = 300;
           var image_x = '-35px';
         }
         else {
           var image_width = '500px';
+          var image_width_number = 500;
           var image_x = '-125px';
         }
 
         node.enter().append('image')
         .attr('xlink:href', function (d){
+
+          var this_image = $(this);
+
+
+          // Determine the appropriate aspect ratio of the image using the image url
+          var img = new Image();
+          img.src = d.image;
+          img.onload = function(){
+
+              var image_aspect_ratio = this.height / this.width;
+
+              console.log('image_aspect_ratio: ' + image_aspect_ratio);
+
+              $(this_image).attr('height', image_width_number*image_aspect_ratio);
+          };
+          
+
           return d.image;
         })
         .attr('x', image_x)   /* -125px */
