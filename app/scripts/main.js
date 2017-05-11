@@ -1,5 +1,21 @@
 $(document).ready(function() {
 
+
+	/* Materialize Carousel */
+    // $('.carousel').carousel({
+
+    //  	indicators: true
+
+    // });
+
+    $('.carousel.carousel-slider').carousel({
+    	fullWidth: true,
+    	indicators: true
+    });
+
+
+
+
 	/* Remove loader */
 	$('#loader').fadeOut(400, function(){
 		$('#loader').remove();
@@ -42,7 +58,7 @@ $(document).ready(function() {
 			if (nextIndex == 5) {
 				$('#pieChart').addClass('animated rollOut');
 				
-				$('.carousel').addClass('animated fadeInUpBig')
+				$('#portfolio .carousel').addClass('animated fadeInUpBig')
 			}
 
 			if (nextIndex == 6) {
@@ -55,14 +71,7 @@ $(document).ready(function() {
 
 	});
 
-	/* Materialize Carousel */
-    $('.carousel').carousel({
 
-     	indicators: true
-
-    });
-
-    //$('.carousel.carousel-slider').carousel({fullWidth: true});
 
 
     /* Materialize Modal */

@@ -402,7 +402,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
     image: 'images/ontarget-logo-white.png',
     children: [
       {name: 'Intern / Production Asst.', children : [
-        {name:'Wordpress Updates'},
+        {name:'Wordpress Dev'},
         {name:'Custom Themes'},
         {name:'Front-end Dev'},
       ]
