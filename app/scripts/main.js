@@ -8,9 +8,10 @@ $(document).ready(function() {
 
     // });
 
+
     $('.carousel.carousel-slider').carousel({
     	fullWidth: true,
-    	indicators: true
+    	indicators: true 
     });
 
 
@@ -37,10 +38,17 @@ $(document).ready(function() {
 			}
 
 			if (nextIndex == 2) {
+				/* Resume Page */
 				$('#pieChart').removeClass('animated rollOut');
 			    $('#pieChart').addClass('animated rollIn');
 
-			    $('#segmentText').addClass('animated shake');
+			    $('#segmentText').addClass('animated shake'); 
+
+
+			    /* Portfolio Page */
+			    $('#observer .black-screen').addClass('animated zoomOut');
+
+			    $('#observer .project-info').addClass('animated slideInRight');
 			}
 
 			if (nextIndex == 3) {
@@ -214,13 +222,16 @@ $(document).ready(function() {
 		$(this).filter('.active').addClass('tooltipped');
 	});*/
 
-	$('#intro .section-title').textillate();
+	$('#intro .section-title').not('.section-title-small').textillate();
 
 	$('#intro .section-title').on('inAnimationEnd.tlt', function () {
 
 		$('.sub-intro').css('opacity', '1');
 		
-		$('.sub-intro').textillate()
+		$('.sub-intro').textillate();
+
+		$('.section-title-small').textillate();
+		$('.section-title-small').css('opacity', '1');
 
 	});
 

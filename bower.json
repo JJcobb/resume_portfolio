@@ -4,9 +4,9 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "modernizr": "~2.8.1",
+    "materialize": "^0.98.0",
     "d3": "~3.5.17",
     "openui5-sap.ui.core": "openui5/packaged-sap.ui.core#^1.46.3",
-    "materialize": "^0.98.0",
     "fullpage.js": "^2.9.2",
     "animate.css": "^3.5.2",
     "letteringjs": "Lettering.js#^0.7.0",
