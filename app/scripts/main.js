@@ -259,6 +259,7 @@ $(document).ready(function() {
 
 
 
+
 	if( $(window).width() < 700 ){
 
 		$('.carousel .carousel-item')
@@ -269,5 +270,21 @@ $(document).ready(function() {
 			.attr('data-tooltip-id', '');
 
 	}
+
+
+
+
+	/* Portfolio */
+	/*$('.btn-portfolio a').hover(
+
+		function(){
+			$(this).addClass('z-depth-3');
+		},
+		function(){
+			$(this).removeClass('z-depth-3');
+		}
+	);*/
+
+
 
 });
