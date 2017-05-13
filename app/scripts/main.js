@@ -9,12 +9,36 @@ $(document).ready(function() {
     // });
 
 
-    $('.carousel.carousel-slider').carousel({
+
+	$('.carousel.carousel-slider').carousel({
     	fullWidth: true,
     	indicators: true 
     });
 
 
+
+	var autoplay_interval;
+
+
+    function autoplay(this_carousel) {
+
+	    autoplay_interval = setInterval(function(){
+							    $(this_carousel).carousel('next');
+							}, 6000);
+
+	};
+
+
+	function pause_autoplay(){
+
+		if(autoplay_interval){
+			clearInterval(autoplay_interval);
+		}
+
+	};
+
+
+	
 
 
 	/* Remove loader */
@@ -37,42 +61,71 @@ $(document).ready(function() {
 
 			}
 
-			if (nextIndex == 2) {
+			if (nextIndex == 2) { 
 				/* Resume Page */
 				$('#pieChart').removeClass('animated rollOut');
 			    $('#pieChart').addClass('animated rollIn');
-
+ 
 			    $('#segmentText').addClass('animated shake'); 
 
 
 			    /* Portfolio Page */
-			    $('#observer .black-screen').addClass('animated zoomOut');
+			    $('#observer .black-screen').addClass('animated fadeOut'); 
 
-			    $('#observer .project-info').addClass('animated slideInRight');
+			    $('#observer .project-info').addClass('animated slideInLeft');
 			}
 
 			if (nextIndex == 3) {
 			    $('#pieChart').addClass('animated rollOut');
 
 			    $('#skills .section-title').addClass('animated zoomIn');
+
+
+			    /* Portfolio Page */
+			    $('#nfl .black-screen').addClass('animated fadeOut');
+
+			    $('#nfl .project-info').addClass('animated slideInRight');
 			}
 
 			if (nextIndex == 4) {
 				$('#pieChart').addClass('animated rollOut');
 
 			    $('.sapUiBody').addClass('animated bounceInDown');
+
+
+			    /* Portfolio Page */
+			    $('#scoop .black-screen').addClass('animated fadeOut');
+
+			    $('#scoop .project-info').addClass('animated slideInLeft');
 			}
 
 			if (nextIndex == 5) {
 				$('#pieChart').addClass('animated rollOut');
 				
-				$('#portfolio .carousel').addClass('animated fadeInUpBig')
+				//$('#portfolio .carousel').addClass('animated fadeInUpBig');
+
+				$('#portfolio .black-screen').addClass('animated fadeOut');
+
+				$('#portfolio .project-info').addClass('animated slideInLeft');
+
+				autoplay('#portfolio .carousel');
+
+
+				/* Portfolio Page */
+			    $('#oconee .black-screen').addClass('animated fadeOut');
+
+			    $('#oconee .project-info').addClass('animated slideInRight');
 			}
 
 			if (nextIndex == 6) {
 				$('#pieChart').addClass('animated rollOut');
 				
 				$('#contact-form').addClass('animated slideInLeft');
+			}
+
+
+			if (nextIndex != 5){
+				pause_autoplay();
 			}
 
 		}
