@@ -87,7 +87,21 @@ if( $('#pieChart').css('max-width') != '100%' ){
 
 var svg = d3.select('#pieChart').append('svg')
   .attr('width', '100%')
-  .attr('height', window.innerHeight)
+  //.attr('height', window.innerHeight)
+  .attr('height', function(){
+
+    if( window.innerWidth > 600 && window.innerWidth < 800 ){
+
+      var new_height = window.innerHeight - $('#pieText').height();
+
+      return new_height;
+    }
+    else {
+
+      return window.innerHeight;
+    }
+
+  })
   /*.attr('height', '75vh')*/
   .attr('viewBox', '0 0 ' + Math.min(width, height) + ' ' + Math.min(width, height))
   .attr('preserveAspectRatio', 'xMinYMin')

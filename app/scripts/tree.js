@@ -41,7 +41,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
           rectW = 250;                                                   /*  Width and Height  */
       var rectH = 100; /****************** was 50 *********************/
 
-      if( $(window).width() < 700 ){
+      if( $(window).width() < 800 ){
         rectH = 60;
         rectW = 230;
       }
@@ -79,7 +79,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
       .attr('class', 'tree-container')
       .attr('transform', 'translate(' + ( (this.getWidth() / 2) - (rectW / 2) ) + ',' + 0 + ')');   /* SVG container positioning */
 
-      if( $(window).width() < 700 ){
+      if( $(window).width() < 800 ){
 
         $('#experience svg > g').attr('transform', 'translate(' + ( (this.getWidth() / 2) - ((rectW+20) / 2) ) + ',' + 0 + ')');
       }
@@ -134,7 +134,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
 
 
                                         /********** Width of logo if mobile **********/
-        if( $(window).width() < 700 ){
+        if( $(window).width() < 800 ){
           var image_width = '300px';
           var image_width_number = 300;
           var image_x = '-35px';
@@ -177,10 +177,26 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
         .attr('transform', function (d) {
           return 'translate(' + source.x0 + ',' + source.y0 + ')';
         })
-        .on('click', click);
+        .on('click', click)
+        .on('mouseover', function(){
+
+          if( $('rect', this).is('.animated') ){
+            $('rect', this).css('fill', 'rgba(255, 255, 255, 0.15)');
+          }
+
+        })
+        .on('mouseout', function(){        
+
+          if( $('rect', this).is('.animated') ){
+            $('rect', this).css('fill', 'transparent');
+          }
+
+        });
 
 
-        if( $(window).width() < 700 ){
+
+
+        if( $(window).width() < 800 ){
 
           var border_radius = 20;
         }
@@ -216,14 +232,14 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
         .duration(duration)
         .attr('transform', function (d, i) {
 
-          if( $(window).width() < 700 ){
+          if( $(window).width() < 800 ){
 
             console.log('d.name: ' + d.name + ' | i: ' + i);
 
-            if(d.name != 'ROAR!' && d.name != 'On Target' && d.name != 'Intern' && d.name != 'Intern / Production Asst.'){
+            if(d.name != 'ROAR!' && d.name != 'On Target' && d.name != 'Intern' && d.name != 'Web Production Asst.'){
               var vertical_spacing = i*60 - 100;
             }
-            else if(d.name == 'Intern' || d.name == 'Intern / Production Asst.'){
+            else if(d.name == 'Intern' || d.name == 'Web Production Asst.'){
               var vertical_spacing = -50;
             }
             else{
@@ -253,7 +269,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
           return d._children ? 'white' : 'white';   /***** Colors of circles  ******/
         })
         .attr('class', function (d) {
-          return d._children ? 'animated flash infinite node-flash' : '';
+          return d._children ? 'animated flash shake infinite node-flash' : '';
         });
 
         nodeUpdate.select('text')
@@ -401,10 +417,11 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
     name: 'On Target',
     image: 'images/ontarget-logo-white.png',
     children: [
-      {name: 'Intern / Production Asst.', children : [
+      {name: 'Web Production Asst.', children : [
         {name:'Wordpress Dev'},
-        {name:'Custom Themes'},
+        {name:'Theme Customization'},
         {name:'Front-end Dev'},
+        {name:'Web Graphics'},
       ]
       }
     ]
@@ -419,8 +436,8 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
     children: [
       {name: 'Intern', children : [
         {name:'Responsive Conversion'},
-        {name:'ASP.NET Updates'},
-        {name:'HTML Emails'},
+        {name:'ASP.NET Dev'},
+        {name:'HTML Email Design/Dev'},
       ]
       }
     ]
