@@ -3,14 +3,36 @@ $(document).ready(function() {
 
 	/* Materialize Carousel */
     // $('.carousel').carousel({
-
     //  	indicators: true
-
     // });
 
 
+	$('#portfolio .carousel.carousel-slider').carousel({
+    	fullWidth: true,
+    	indicators: true 
+    });
 
-	$('.carousel.carousel-slider').carousel({
+    $('#observer .carousel.carousel-slider').carousel({
+    	fullWidth: true,
+    	indicators: true 
+    });
+
+    $('#nfl .carousel.carousel-slider').carousel({
+    	fullWidth: true,
+    	indicators: true 
+    });
+
+    $('#scoop .carousel.carousel-slider').carousel({
+    	fullWidth: true,
+    	indicators: true 
+    });
+
+    $('#oconee .carousel.carousel-slider').carousel({
+    	fullWidth: true,
+    	indicators: true 
+    });
+
+    $('#resume .carousel.carousel-slider').carousel({
     	fullWidth: true,
     	indicators: true 
     });
