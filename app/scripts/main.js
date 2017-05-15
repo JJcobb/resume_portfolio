@@ -82,7 +82,7 @@ $(document).ready(function() {
 							}, 6000);
 
 
-	    console.log("Carousel: " + this_carousel + " | Page index: " + page_index);
+	    console.log('Carousel: ' + this_carousel + ' | Page index: ' + page_index);
 
 	    //autoplay_intervals[page_index] = autoplay_interval;
 
@@ -99,7 +99,7 @@ $(document).ready(function() {
 		if( autoplay_intervals[page_index] != undefined ){
 			clearInterval( autoplay_intervals[page_index] );
 
-			console.log("Carousel at index: " + page_index + " has been stopped");
+			console.log('Carousel at index: ' + page_index + ' has been stopped');
 		}
 
 
@@ -251,12 +251,31 @@ $(document).ready(function() {
     });
 
 
-/*******************************************************/
-    /*$('#contact-form').on('submit', function(e){
+
+
+
+
+    $('#contact-form').on('submit', function(e){
 
 		e.preventDefault();
 
 		var form = $(this);
+
+		
+		var form_name = $('#name', form).val();
+		var form_email = $('#email', form).val();
+		var form_subject = $('#subject', form).val();
+		var form_message = $('#message', form).val();
+
+
+		$.ajax({
+		    url: "https://formspree.io/jacobvogelbacher@gmail.com", 
+		    method: "POST",
+		    data: {name: form_name, email: form_email, subject: form_subject, message: form_message},
+		    dataType: "json"
+		});
+
+
 
 
 		$(form).fadeOut(500, function(){
@@ -270,8 +289,8 @@ $(document).ready(function() {
 				$('#toast-container').toggle();
 
             });
-        });*/
-/********************************************************/
+        });
+
 
 
 		/*var post_url = form.attr('action');
@@ -314,8 +333,6 @@ $(document).ready(function() {
 
 	        }
 	    });*/
-
-
 
 
 
@@ -376,9 +393,9 @@ $(document).ready(function() {
 		}*/
 
 
-/**********************************************/
-	/*});*/
-/**********************************************/
+
+	}); //END Contact Form
+
 
 
 	/*$('.carousel-item').on('hover', function(){
