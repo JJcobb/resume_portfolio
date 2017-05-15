@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/bower_components/materialize/bin/materialize.css" />
     <link rel="stylesheet" href="/bower_components/fullpage.js/dist/jquery.fullpage.css" />
     <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -779,6 +780,11 @@
 
             <p class="btn-portfolio">
               <a href="portfolio.html" class="waves-effect waves-light btn-large white grey-text text-darken-4">View Portfolio</a>
+
+              <a href="https://github.com/JJcobb/" target="_blank" class="white-text btn-icon" title="GitHub">
+                <i class="fa fa-github"></i>
+              </a>
+
             </p>
 
           </div>
@@ -807,7 +813,7 @@
           <div class="col s12 m10 offset-m1 l8 offset-l2">
 
 
-            <form action="process_email.php" method="post" id="contact-form">
+            <form action="https://formspree.io/jacobvogelbacher@gmail.com" method="POST" id="contact-form">
 
               <div class="row">
                 <div class="input-field col s12">
@@ -818,14 +824,14 @@
 
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="email" name="email" type="email" class="validate">
+                  <input id="email" name="_replyto" type="email" class="validate">
                   <label for="email">Email</label>
                 </div>
               </div>
 
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="subject" name="subject" type="text" class="validate">
+                  <input id="subject" name="_subject" type="text" class="validate">
                   <label for="subject">Subject</label>
                 </div>
               </div>
@@ -837,9 +843,15 @@
                 </div>
               </div>
 
+              <input type="text" name="_gotcha" style="display:none" />
+
+              <input type="hidden" name="_next" value="" />
+
               <div class="row">
                 <div class="col s12 center-align">
-                  <button class="btn waves-effect waves-light grey darken-4 btn-large btn-contact" type="submit" name="action">Send</button>
+                  <!-- <button class="btn waves-effect waves-light grey darken-4 btn-large btn-contact" type="submit" name="action">Send</button> -->
+
+                  <input class="btn waves-effect waves-light grey darken-4 btn-large btn-contact" type="submit" value="Send">
                 </div>
               </div>
 

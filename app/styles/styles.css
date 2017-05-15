@@ -22,6 +22,9 @@ body {
 	.my-pink:hover {
 		background-color: #ff708f;
 	}
+.my-pink-text {
+	color: #ff708f !important;
+}
 
 .my-green {
 	background-color: #448528;
@@ -38,6 +41,9 @@ body {
 	.my-beige:hover {
 		background-color: #f6e9bf;
 	}
+.my-beige-text {
+	color: #f6e9bf !important;
+}
 
 .my-light-green {
 	background-color: #4CAF50;
@@ -45,6 +51,9 @@ body {
 	.my-light-green:hover {
 		background-color: #4CAF50;
 	}
+.my-light-green-text {
+	color: #4CAF50 !important;
+}
 
 .my-teal {
 	background-color: #0fa6a0;
@@ -61,6 +70,11 @@ body {
 	.nfl-red:hover {
 		background-color: #c8102e;
 	}
+.nfl-red-text {
+	color: #c8102e !important;
+}
+
+
 
 #loader {
     position: fixed;
@@ -845,6 +859,22 @@ path {
 }
 
 
+.btn-icon {
+	margin-left: 0.5em;
+    display: inline-block;
+    vertical-align: middle;
+    transition: all 0.3s;
+}
+
+.btn-portfolio a.btn-icon:hover {
+	box-shadow: none !important;
+}
+
+.btn-icon i {
+	font-size: 2.25em;
+}
+
+
 
 
 
@@ -1049,6 +1079,8 @@ path {
 	.project-image.right .desktop {
 		margin-right: 1.25em;
 	}
+
+
 }
 
 
@@ -1271,10 +1303,18 @@ path {
 	    margin-bottom: 0.5em;
 	    font-size: 14px;
 	    margin-right: 2px;
+	    line-height: 30px;
+	    height: 30px;
+	    padding: 0 12px;
 	}
 
 	#portfolio .project-info h3 {
 		font-size: 1.75em;
+	}
+
+
+	.btn-portfolio .btn-icon {
+		display: none;
 	}
 
 }
