@@ -1002,6 +1002,10 @@ path {
 	    font-size: 3.5em;
 	}
 
+	.section-title-small {
+		font-size: 3em;
+	}
+
 
 	h3.sub-intro {
 		font-size: 2.25rem;
