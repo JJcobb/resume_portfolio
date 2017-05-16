@@ -7,36 +7,6 @@ $(document).ready(function() {
     // });
 
 
-	// $('#portfolio .carousel.carousel-slider').carousel({
- //    	fullWidth: true,
- //    	indicators: true 
- //    });
-
- //    $('#observer .carousel.carousel-slider').carousel({
- //    	fullWidth: true,
- //    	indicators: true 
- //    });
-
- //    $('#nfl .carousel.carousel-slider').carousel({
- //    	fullWidth: true,
- //    	indicators: true 
- //    });
-
- //    $('#scoop .carousel.carousel-slider').carousel({
- //    	fullWidth: true,
- //    	indicators: true 
- //    });
-
- //    $('#oconee .carousel.carousel-slider').carousel({
- //    	fullWidth: true,
- //    	indicators: true 
- //    });
-
- //    $('#resume .carousel.carousel-slider').carousel({
- //    	fullWidth: true,
- //    	indicators: true 
- //    });
-
 
     $('.carousel.carousel-slider').carousel({
     	fullWidth: true,
@@ -70,9 +40,11 @@ $(document).ready(function() {
 
 
 
-	//var autoplay_interval;
+	var number_of_carousels = $('.carousel-slider').length;
 
-	var autoplay_intervals = [];
+	//var autoplay_intervals = [];
+
+	var autoplay_intervals = new Array(number_of_carousels-1);
 
 
     function autoplay(this_carousel, page_index) {
@@ -82,11 +54,17 @@ $(document).ready(function() {
 							}, 6000);
 
 
-	    console.log('Carousel: ' + this_carousel + ' | Page index: ' + page_index);
-
 	    //autoplay_intervals[page_index] = autoplay_interval;
 
-	    autoplay_intervals.splice(page_index, 0, autoplay_interval);
+	    autoplay_intervals.splice(page_index - 2, 0, autoplay_interval);
+
+
+	    console.log("*******************************\nAutoplay internal array:");
+
+	    $.each(autoplay_intervals, function(){
+	    	console.log(this);
+	    });
+
 	};
 
 
@@ -96,15 +74,15 @@ $(document).ready(function() {
 		// 	clearInterval(autoplay_interval);
 		// }
 
-		if( autoplay_intervals[page_index] != undefined ){
-			clearInterval( autoplay_intervals[page_index] );
+		if( autoplay_intervals[page_index-2] != undefined ){
+			clearInterval( autoplay_intervals[page_index-2] );
 
-			console.log('Carousel at index: ' + page_index + ' has been stopped');
+			console.log('Carousel at index: ' + page_index-2 + ' has been stopped');
 		}
 
 
 
-		autoplay_intervals.splice(page_index, 1);
+		autoplay_intervals.splice(page_index-2, 1);
 
 	};
 
@@ -128,19 +106,19 @@ $(document).ready(function() {
 		onLeave: function(index, nextIndex, direction){
 
 
-			if ( nextIndex != 2 && autoplay_intervals[2] != undefined ){
+			if ( nextIndex != 2 && autoplay_intervals[0] != undefined ){
 				pause_autoplay(2);
 			}
-			if (nextIndex != 3 && autoplay_intervals[3] != undefined ){
+			if (nextIndex != 3 && autoplay_intervals[1] != undefined ){
 				pause_autoplay(3);
 			}
-			if (nextIndex != 4 && autoplay_intervals[4] != undefined ){
+			if (nextIndex != 4 && autoplay_intervals[2] != undefined ){
 				pause_autoplay(4);
 			}
-			if (nextIndex != 5 && autoplay_intervals[5] != undefined ){
+			if (nextIndex != 5 && autoplay_intervals[3] != undefined ){
 				pause_autoplay(5);
 			}
-			if (nextIndex != 6 && autoplay_intervals[6] != undefined ){
+			if (nextIndex != 6 && autoplay_intervals[4] != undefined ){
 				pause_autoplay(6);
 			}
 
@@ -163,7 +141,7 @@ $(document).ready(function() {
 
 			    $('#observer .project-info').addClass('animated slideInLeft');
 
-			    //autoplay('#observer .carousel', 2);
+			    autoplay('#observer .carousel', 2);
 			}
 
 			if (nextIndex == 3) {
@@ -177,7 +155,7 @@ $(document).ready(function() {
 
 			    $('#nfl .project-info').addClass('animated slideInRight');
 
-			   // autoplay('#nfl .carousel', 3);
+			    autoplay('#nfl .carousel', 3);
 			}
 
 			if (nextIndex == 4) {
@@ -191,7 +169,7 @@ $(document).ready(function() {
 
 			    $('#scoop .project-info').addClass('animated slideInLeft');
 
-			    //autoplay('#scoop .carousel', 4);
+			    autoplay('#scoop .carousel', 4);
 			}
 
 			if (nextIndex == 5) {
@@ -214,7 +192,7 @@ $(document).ready(function() {
 			    $('#oconee .project-info').addClass('animated slideInRight');
 
 			    if( $('#oconee .carousel').length > 0 ){
-				    //autoplay('#oconee .carousel', 5);
+				    autoplay('#oconee .carousel', 5);
 				}
 
 			}
@@ -230,7 +208,7 @@ $(document).ready(function() {
 
 			    $('#resume .project-info').addClass('animated slideInLeft');
 
-			    //autoplay('#resume .carousel', 6);
+			    autoplay('#resume .carousel', 6);
 			}
 
 			if (nextIndex == 7) {
@@ -269,10 +247,10 @@ $(document).ready(function() {
 
 
 		$.ajax({
-		    url: "https://formspree.io/jacobvogelbacher@gmail.com", 
-		    method: "POST",
+		    url: 'https://formspree.io/jacobvogelbacher@gmail.com', 
+		    method: 'POST',
 		    data: {name: form_name, email: form_email, subject: form_subject, message: form_message},
-		    dataType: "json"
+		    dataType: 'json'
 		});
 
 

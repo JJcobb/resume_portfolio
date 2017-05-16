@@ -982,109 +982,19 @@ path {
 }
 
 .side-nav a {
-	font-size: 1.75em;
-	height: auto;
-    line-height: 3em;
+	font-size: 1.6em !important;
+	height: auto !important;
+    line-height: 3em !important;
+    padding: 0 25px !important;
 }
 
 
 
 
-
-@media screen and (min-width: 760px){
-
-	.desktop {
-		padding: 1em;
-	    border: 2px solid white;
-	    border-radius: 10px;
-	    position: relative;
-	}
-
-	.desktop-circle-top {
-	    height: 10px;
-	    width: 10px;
-	    background-color: white;
-	    border-radius: 50%;
-	    margin: 0 auto;
-	    margin-bottom: 1em;
-	}
-
-	.desktop-circle-bottom {
-		height: 15px;
-	    width: 15px;
-	    background-color: white;
-	    border-radius: 50%;
-	    margin: 0 auto;
-	    margin-top: 1em;
-	}
-
-	.desktop-base-top {
-	    /*width: 100px;*/
-	    width: 13%;
-	    margin: 0 auto;
-	    height: 45px;
-	    /*background: white;*/
-	    background-color: inherit;
-	    z-index: 10;
-	    border: 2px solid white;
-	    /*border-top: 5px solid white;*/
-	    border-bottom-right-radius: 7px;
-	    border-bottom-left-radius: 7px;
-	    position: absolute;
-	    bottom: -45px;
-	    left: 0;
-	    right: 0;
-	}
-
-	.desktop-base-bottom {
-	    /*width: 200px;*/
-	    width: 27%;
-	    margin: 0 auto;
-	    height: 60px;
-	    border: 2px solid white;
-	    /*background: white;*/
-	    border-radius: 80%;
-	    z-index: 1;
-	    position: absolute;
-	    bottom: -75px;
-	    left: 0;
-	    right: 0;
-	}
+/****************** Media Queries *************************/
 
 
-
-
-	.project-info {
-		z-index: 2;
-		position: relative;
-	}
-
-	/*.project-info:first-of-type {
-		text-align: right;
-	}*/
-
-	.project-info.left {
-		text-align: right;
-	}
-
-	.project-image {
-		z-index: 3;
-		position: relative;
-	}
-
-	/*.project-image:last-of-type .desktop {
-		margin-right: 1.25em;
-	}*/
-
-	.project-image.right .desktop {
-		margin-right: 1.25em;
-	}
-
-
-}
-
-
-
+/* Mobile */
 
 @media screen and (max-width: 760px) {
 
@@ -1139,6 +1049,10 @@ path {
 
 	.section-title-top {
 		top: 10%;
+	}
+
+	#portfolio .section-title-top, #contact .section-title-top, #portfolio-contact .section-title-top {
+		top: 2%;
 	}
 
 	.sm-section-title-top {
@@ -1320,6 +1234,124 @@ path {
 }
 
 
+/* Less than iPhone 6 */
+
+@media screen and (max-width: 370px){
+
+	.project-info h3 {
+		font-size: 2.5rem; 
+		margin: 1rem 0;
+	}
+
+	.project-info p.flow-text {
+		margin: 1rem 0;
+	}
+
+	.btn-portfolio {
+		margin-top: 0.75rem;
+	}
+
+}
+
+
+
+/* Tablet and up */
+
+@media screen and (min-width: 760px){
+
+	.desktop {
+		padding: 1em;
+	    border: 2px solid white;
+	    border-radius: 10px;
+	    position: relative;
+	}
+
+	.desktop-circle-top {
+	    height: 10px;
+	    width: 10px;
+	    background-color: white;
+	    border-radius: 50%;
+	    margin: 0 auto;
+	    margin-bottom: 1em;
+	}
+
+	.desktop-circle-bottom {
+		height: 15px;
+	    width: 15px;
+	    background-color: white;
+	    border-radius: 50%;
+	    margin: 0 auto;
+	    margin-top: 1em;
+	}
+
+	.desktop-base-top {
+	    /*width: 100px;*/
+	    width: 13%;
+	    margin: 0 auto;
+	    height: 45px;
+	    /*background: white;*/
+	    background-color: inherit;
+	    z-index: 10;
+	    border: 2px solid white;
+	    /*border-top: 5px solid white;*/
+	    border-bottom-right-radius: 7px;
+	    border-bottom-left-radius: 7px;
+	    position: absolute;
+	    bottom: -45px;
+	    left: 0;
+	    right: 0;
+	}
+
+	.desktop-base-bottom {
+	    /*width: 200px;*/
+	    width: 27%;
+	    margin: 0 auto;
+	    height: 60px;
+	    border: 2px solid white;
+	    /*background: white;*/
+	    border-radius: 80%;
+	    z-index: 1;
+	    position: absolute;
+	    bottom: -75px;
+	    left: 0;
+	    right: 0;
+	}
+
+
+
+
+	.project-info {
+		z-index: 2;
+		position: relative;
+	}
+
+	/*.project-info:first-of-type {
+		text-align: right;
+	}*/
+
+	.project-info.left {
+		text-align: right;
+	}
+
+	.project-image {
+		z-index: 3;
+		position: relative;
+	}
+
+	/*.project-image:last-of-type .desktop {
+		margin-right: 1.25em;
+	}*/
+
+	.project-image.right .desktop {
+		margin-right: 1.25em;
+	}
+
+
+}
+
+
+
+/* Mobile and Tablet */
 
 @media screen and (max-width: 768px){
 
@@ -1353,11 +1385,16 @@ path {
 
 
 
+/* Tablet */
 
 @media screen and (min-width: 500px) and (max-width: 991px){
 
 	.section-title {
 		font-size: 8.75em;
+	}
+
+	.section-title-top {
+		top: 10%;
 	}
 
 	.section-title-small {
@@ -1368,10 +1405,25 @@ path {
 	.project-image {
 		margin-bottom: 90px;
 	}
+
+
+	.btn-large {
+		width: 45%;
+	}
+
+
+	.sapUiBody {
+		padding-top: 0;
+	}
+
+	svg:not(:root) {
+		overflow: visible !important;
+	}
 }
 
 
 
+/* Mobile and tablet, right before desktop */
 
 @media screen and (max-width: 991px){
 
@@ -1392,6 +1444,7 @@ path {
 }
 
 
+/* Desktop */
 
 @media screen and (min-width: 992px){
 

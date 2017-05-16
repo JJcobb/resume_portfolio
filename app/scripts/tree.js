@@ -41,7 +41,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
           rectW = 250;                                                   /*  Width and Height  */
       var rectH = 100; /****************** was 50 *********************/
 
-      if( $(window).width() < 800 ){
+      if( $(window).width() < 700 ){
         rectH = 60;
         rectW = 230;
       }
@@ -79,7 +79,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
       .attr('class', 'tree-container')
       .attr('transform', 'translate(' + ( (this.getWidth() / 2) - (rectW / 2) ) + ',' + 0 + ')');   /* SVG container positioning */
 
-      if( $(window).width() < 800 ){
+      if( $(window).width() < 700 ){
 
         $('#experience svg > g').attr('transform', 'translate(' + ( (this.getWidth() / 2) - ((rectW+20) / 2) ) + ',' + 0 + ')');
       }
@@ -106,7 +106,21 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
 
       root.children.forEach(collapse);
       update(root);
-      d3.select('#' + this.getId()).style('height', '350px'); /****** Height for each chart's container ********/
+
+      /****** Height for each chart's container ********/
+
+      /* Tablet */
+      if( $(window).width() > 700  &&  $(window).width() < 992 ){
+
+        d3.select('#' + this.getId()).style('height', '500px');
+      }
+
+      /* Mobile and desktop */
+      else {
+
+        d3.select('#' + this.getId()).style('height', '350px');
+      }
+       
 
 
       function update(source) {
@@ -134,7 +148,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
 
 
                                         /********** Width of logo if mobile **********/
-        if( $(window).width() < 800 ){
+        if( $(window).width() < 700 ){
           var image_width = '300px';
           var image_width_number = 300;
           var image_x = '-35px';
@@ -196,7 +210,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
 
 
 
-        if( $(window).width() < 800 ){
+        if( $(window).width() < 700 ){
 
           var border_radius = 20;
         }
@@ -232,13 +246,15 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
         .duration(duration)
         .attr('transform', function (d, i) {
 
-          if( $(window).width() < 800 ){
+          /* Mobile positioning of the nodes */
+          if( $(window).width() < 700 ){
 
-            console.log('d.name: ' + d.name + ' | i: ' + i);
-
+            /* Spacing between the nodes below the position title */
             if(d.name != 'ROAR!' && d.name != 'On Target' && d.name != 'Intern' && d.name != 'Web Production Asst.'){
               var vertical_spacing = i*60 - 100;
             }
+
+            /* Spacing between the position title and the nodes listed below */
             else if(d.name == 'Intern' || d.name == 'Web Production Asst.'){
               var vertical_spacing = -50;
             }
@@ -249,9 +265,28 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
             return 'translate(' + 0 + ',' + ((d.y/1.5) + vertical_spacing) + ')';
 
           }
-          
-          else{
 
+          /* Tablet positioning of the nodes */
+          else if( $(window).width() >= 700  &&  $(window).width() < 992 ){
+
+            /* Spacing between the nodes below the position title */
+            if(d.name != 'ROAR!' && d.name != 'On Target' && d.name != 'Intern' && d.name != 'Web Production Asst.'){
+              var vertical_spacing = i*110 - 20;
+            }
+
+            /* Spacing between the position title and the nodes listed below */
+            else if(d.name == 'Intern' || d.name == 'Web Production Asst.'){
+              var vertical_spacing = -20;
+            }
+            else{
+              var vertical_spacing = 0;
+            }
+
+            return 'translate(' + 0 + ',' + ((d.y/1.5) + vertical_spacing) + ')';
+          }
+
+          /* Desktop positioning of the nodes */
+          else{
             return 'translate(' + (d.x*4) + ',' + d.y/1.5 + ')';  /********** Space between them *************/
           }       
           
