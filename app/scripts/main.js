@@ -59,7 +59,7 @@ $(document).ready(function() {
 	    autoplay_intervals.splice(page_index - 2, 0, autoplay_interval);
 
 
-	    console.log("*******************************\nAutoplay internal array:");
+	    console.log('*******************************\nAutoplay internal array:');
 
 	    $.each(autoplay_intervals, function(){
 	    	console.log(this);
