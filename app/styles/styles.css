@@ -16,12 +16,10 @@ body {
 	color: #00C8DF;
 }
 
-.my-pink {
+.my-pink, .my-pink:hover, .my-pink:focus {
 	background-color: #ff708f;
 }
-	.my-pink:hover {
-		background-color: #ff708f;
-	}
+
 .my-pink-text {
 	color: #ff708f !important;
 }
@@ -35,22 +33,18 @@ body {
 	color: #448528;
 }
 
-.my-beige {
+.my-beige, .my-beige:hover, .my-beige:focus {
 	background-color: #f6e9bf;
 }
-	.my-beige:hover {
-		background-color: #f6e9bf;
-	}
+
 .my-beige-text {
 	color: #f6e9bf !important;
 }
 
-.my-light-green {
+.my-light-green, .my-light-green:hover, .my-light-green:focus {
 	background-color: #4CAF50;
 }
-	.my-light-green:hover {
-		background-color: #4CAF50;
-	}
+
 .my-light-green-text {
 	color: #4CAF50 !important;
 }
@@ -64,12 +58,10 @@ body {
 	color: #061639;
 }
 
-.nfl-red {
+.nfl-red, .nfl-red:hover, .nfl-red:focus {
 	background-color: #c8102e;
 }
-	.nfl-red:hover {
-		background-color: #c8102e;
-	}
+
 .nfl-red-text {
 	color: #c8102e !important;
 }
