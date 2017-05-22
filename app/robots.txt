@@ -1,4 +1,27 @@
 # robotstxt.org/
 
 User-agent: * 
-Disallow:
+Disallow: /sap/
+Disallow: /styles/
+Disallow: /scripts/
+Disallow: /fonts/
+Disallow: /wild-observer/css/
+Disallow: /wild-observer/js/
+Disallow: /trading-cards/styles/
+Disallow: /trading-cards/scripts/
+Disallow: /pure-scoop/js/
+Disallow: /pure-scoop/includes/
+Disallow: /pure-scoop/css/
+Disallow: /pure-scoop/admin
+Disallow: /oconee/includes/
+Disallow: /oconee/js/
+Disallow: /oconee/css/
+Disallow: /oconee/admin
+Disallow: /oconee/orders_add
+Disallow: /oconee/orders_edit
+Disallow: /oconee/orders_view
+Disallow: /oconee/products_add
+Disallow: /oconee/products_edit
+Disallow: /oconee/products_view
+Disallow: /oconee/users_edit
+Disallow: /oconee/users_view
