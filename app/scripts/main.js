@@ -246,28 +246,99 @@ $(document).ready(function() {
 		var form_message = $('#message', form).val();
 
 
-		$.ajax({
-		    url: 'https://formspree.io/jacobvogelbacher@gmail.com', 
-		    method: 'POST',
-		    data: {name: form_name, email: form_email, subject: form_subject, message: form_message},
-		    dataType: 'json'
-		});
+		var valid = false;
+		var invalid_message;
+
+
+		var name_input = $('#name', form);
+
+		var name_regex = /^[^±!@£$%^&*_+§¡€#¢§¶•ªº«\\\/<>\[\]\{\}?:;|=.,]{1,40}$/;
+
+		var name_regex_result = form_name.match(name_regex);
+
+
+		/* Validate the name entered | Check for length and unallowed symbols */
+
+		/* length minimum */
+		if(form_name.length < 2){
+			invalid_message = "I would love to know your name.";
+
+			$(name_input).addClass('invalid');
+			$(name_input).siblings('label').attr('data-error', invalid_message);
+			$(name_input).siblings('label').data('error', invalid_message);
+		}
+
+		/* length max */
+		else if(form_name.length > 40){
+			invalid_message = "That's quite a name! Could you please shorten it for me just a bit?";
+
+			$(name_input).addClass('invalid');
+			$(name_input).siblings('label').attr('data-error', invalid_message);
+			$(name_input).siblings('label').data('error', invalid_message);
+		}
+
+		/* Unallowed characters */
+		else if(!name_regex_result){
+			invalid_message = "Please avoid using any unnecessary symbols.";
+
+			$(name_input).addClass('invalid');
+			$(name_input).siblings('label').attr('data-error', invalid_message);
+			$(name_input).siblings('label').data('error', invalid_message);
+		}
+
+		/* It is valid */
+		else {
+			$(name_input).removeClass('invalid');
+
+			valid = true;
+		}
+
+
+		/* If the name was valid */
+		if(valid){
+
+			/* Send the email */
+			$.ajax({
+			    url: 'https://formspree.io/jacobvogelbacher@gmail.com', 
+			    method: 'POST',
+			    data: {name: form_name, email: form_email, subject: form_subject, message: form_message},
+			    dataType: 'json',
+			    success: function(){
+
+			    	/* Fade out form */
+			    	$(form).fadeOut(500, function(){
+
+			    		/* Show thank you message */
+			            Materialize.toast('Thanks for contacting! We will be in touch soon.', 4000, 'dialog-center', function(){
+
+			            	/* Reset input values in the form */
+			            	$(form).find(':input').val('').removeClass('valid');
+
+			            	/* Fade form back in */
+							$(form).fadeIn(500);    
+
+							/* Remove thank you message container */
+							$('#toast-container').toggle();
+
+							if( $('#toast-container').css('display') != 'none' ){
+
+								$('#toast-container').css('display', 'none');
+							}
+
+			            });
+			        });
+
+			    }
+			    //END AJAX success
+
+			});
+			// END AJAX
+
+		}
+		// END if valid
 
 
 
-
-		$(form).fadeOut(500, function(){
-
-            Materialize.toast('Thanks for contacting! We will be in touch soon.', 4000, 'dialog-center', function(){
-
-            	$(form).find(':input').val('').removeClass('valid');
-
-				$(form).fadeIn(500);    
-
-				$('#toast-container').toggle();
-
-            });
-        });
 
 
 

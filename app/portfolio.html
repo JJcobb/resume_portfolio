@@ -550,28 +550,28 @@
 
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="name" name="name" type="text" class="validate">
-                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" class="validate" required>
+                  <label for="name" data-error="Error">Name</label>
                 </div>
               </div>
 
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="email" name="_replyto" type="email" class="validate">
+                  <input id="email" name="_replyto" type="email" class="validate" required>
                   <label for="email">Email</label>
                 </div>
               </div>
 
-              <div class="row">
+              <!--<div class="row">
                 <div class="input-field col s12">
                   <input id="subject" name="_subject" type="text" class="validate">
                   <label for="subject">Subject</label>
                 </div>
-              </div>
+              </div>-->
 
               <div class="row">
                 <div class="input-field col s12">
-                  <textarea id="message" name="message" class="materialize-textarea" data-length="1500"></textarea>
+                  <textarea id="message" name="message" class="materialize-textarea" data-length="1500" required></textarea>
                   <label for="message">Message</label>
                 </div>
               </div>
