@@ -983,6 +983,15 @@ path {
 
 
 
+.footer-text {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+
+
+
 /****************** Media Queries *************************/
 
 
