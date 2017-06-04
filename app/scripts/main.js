@@ -261,7 +261,7 @@ $(document).ready(function() {
 
 		/* length minimum */
 		if(form_name.length < 2){
-			invalid_message = "I would love to know your name.";
+			invalid_message = 'I would love to know your name.';
 
 			$(name_input).addClass('invalid');
 			$(name_input).siblings('label').attr('data-error', invalid_message);
@@ -270,7 +270,7 @@ $(document).ready(function() {
 
 		/* length max */
 		else if(form_name.length > 40){
-			invalid_message = "That's quite a name! Could you please shorten it for me just a bit?";
+			invalid_message = 'That\'s quite a name! Could you please shorten it for me just a bit?';
 
 			$(name_input).addClass('invalid');
 			$(name_input).siblings('label').attr('data-error', invalid_message);
@@ -279,7 +279,7 @@ $(document).ready(function() {
 
 		/* Unallowed characters */
 		else if(!name_regex_result){
-			invalid_message = "Please avoid using any unnecessary symbols.";
+			invalid_message = 'Please avoid using any unnecessary symbols.';
 
 			$(name_input).addClass('invalid');
 			$(name_input).siblings('label').attr('data-error', invalid_message);
