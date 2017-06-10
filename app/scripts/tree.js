@@ -250,12 +250,12 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
           if( $(window).width() < 700 ){
 
             /* Spacing between the nodes below the position title */
-            if(d.name != 'ROAR!' && d.name != 'On Target' && d.name != 'Intern' && d.name != 'Web Production Asst.'){
+            if(d.name != 'ROAR!' && d.name != 'On Target' && d.name != 'Web Development Intern' && d.name != 'Web Production Asst.'){
               var vertical_spacing = i*60 - 100;
             }
 
             /* Spacing between the position title and the nodes listed below */
-            else if(d.name == 'Intern' || d.name == 'Web Production Asst.'){
+            else if(d.name == 'Web Development Intern' || d.name == 'Web Production Asst.'){
               var vertical_spacing = -50;
             }
             else{
@@ -469,7 +469,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
     name: 'ROAR!',
     image: 'images/roar-logo2.png',
     children: [
-      {name: 'Intern', children : [
+      {name: 'Web Development Intern', children : [
         {name:'Responsive Conversion'},
         {name:'ASP.NET Dev'},
         {name:'HTML Email Design/Dev'},

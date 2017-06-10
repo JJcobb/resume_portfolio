@@ -116,44 +116,72 @@ body {
 	background: #00b4ff;
 }
 
+*::-ms-backdrop, .sky-bg {
+  background-color: red;
+}
+
+
 
 /* KEYFRAMES */
 
-@-webkit-keyframes animateCloud {
-    0% {
-       /*margin-left: -1000px;*/
-       /*margin-left: -300px;*/
-       transform: translateX(-20vw);
-    }
-    100% {
-        /*margin-left: 100%;*/
-        transform: translateX(100vw);
-    }
-}
-
-@-moz-keyframes animateCloud {
-    0% {
-        /*margin-left: -1000px;*/
-       /*margin-left: -300px;*/
-       transform: translateX(-20vw);
-    }
-    100% {
-        /*margin-left: 100%;*/
-        transform: translateX(100vw);
-    }
-}
-
+/* IE only animation */
 @keyframes animateCloud {
     0% {
         /*margin-left: -1000px;*/
-       /*margin-left: -300px;*/
-       transform: translateX(-20vw);
+       margin-left: -300px;
     }
     100% {
-        /*margin-left: 100%;*/
-        transform: translateX(100vw);
+        margin-left: 100%;
     }
 }
+
+
+/* Animation for everything except IE */
+@media screen { @media (min-width: 0px) {
+
+
+	@-webkit-keyframes animateCloud {
+	    0% {
+	       /*margin-left: -1000px;*/
+	       /*margin-left: -300px;*/
+	       transform: translateX(-20vw);
+	    }
+	    100% {
+	        /*margin-left: 100%;*/
+	        transform: translateX(100vw);
+	    }
+	}
+
+	@-moz-keyframes animateCloud {
+	    0% {
+	        /*margin-left: -1000px;*/
+	       /*margin-left: -300px;*/
+	       transform: translateX(-20vw);
+	    }
+	    100% {
+	        /*margin-left: 100%;*/
+	        transform: translateX(100vw);
+	    }
+	}
+
+	@keyframes animateCloud {
+	    0% {
+	        /*margin-left: -1000px;*/
+	       /*margin-left: -300px;*/
+	       transform: translateX(-20vw);
+	    }
+	    100% {
+	        /*margin-left: 100%;*/
+	        transform: translateX(100vw);
+	    }
+	}
+
+
+} }
+
+/* END KEYFRAMES */
+
+
 
 /* ANIMATIONS */
 
@@ -348,7 +376,7 @@ rect {
 }
 
 
-g.tree-container g.node[transform="translate(0,0)"], g.tree-container g.node[transform="translate(0)"] {
+g.tree-container g.node[transform="translate(0,0)"], g.tree-container g.node[transform="translate(0)"], g.node[transform=""] {
 
 	display: none;
 }
@@ -438,6 +466,10 @@ rect.animated {
 
 .sub-intro {
 	opacity: 0;
+}
+
+h3.sub-intro {
+	font-size: 2.3rem;
 }
 
 
@@ -1008,10 +1040,17 @@ path {
 	}
 
 
-	h3.sub-intro {
+	/*h3.sub-intro {
 		font-size: 2.25rem;
 	}
 	h4.sub-intro {
+		font-size: 1.1rem;
+	}*/
+
+	h2.sub-intro {
+		font-size: 2.25rem;
+	}
+	h3.sub-intro {
 		font-size: 1.1rem;
 	}
 
