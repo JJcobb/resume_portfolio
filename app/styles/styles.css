@@ -472,6 +472,22 @@ h3.sub-intro {
 	font-size: 2.3rem;
 }
 
+.sub-intro-404 {
+	opacity: 0;
+}
+
+h3.sub-intro-404 {
+	font-size: 2.3rem;
+}
+
+.btn-404 {
+	opacity: 0;
+}
+
+
+.page-404 #fp-nav {
+	display: none;
+}
 
 
 
@@ -1051,6 +1067,13 @@ path {
 		font-size: 2.25rem;
 	}
 	h3.sub-intro {
+		font-size: 1.1rem;
+	}
+
+	h2.sub-intro-404 {
+		font-size: 2.25rem;
+	}
+	h3.sub-intro-404 {
 		font-size: 1.1rem;
 	}
 

@@ -456,11 +456,17 @@ $(document).ready(function() {
 	$('#intro .section-title').on('inAnimationEnd.tlt', function () {
 
 		$('.sub-intro').css('opacity', '1');
-		
 		$('.sub-intro').textillate();
 
 		$('.section-title-small').textillate();
 		$('.section-title-small').css('opacity', '1');
+
+		$('.sub-intro-404').css('opacity', '1');
+		$('.sub-intro-404').textillate({ in: { sync:true } });
+
+		$('.btn-404').animate({
+			opacity: 1
+		}, 2000);
 
 	});
 
