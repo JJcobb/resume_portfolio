@@ -150,11 +150,11 @@ $(document).ready(function() {
 
 
 			    /* Portfolio Page */
-			    $('#nfl .black-screen').addClass('animated fadeOut');
+			    $('#scoop .black-screen').addClass('animated fadeOut');
 
-			    $('#nfl .project-info').addClass('animated slideInRight');
+			    $('#scoop .project-info').addClass('animated slideInLeft');
 
-			    autoplay('#nfl .carousel', 3);
+			    autoplay('#scoop .carousel', 3);
 			}
 
 			if (nextIndex == 4) {
@@ -164,11 +164,11 @@ $(document).ready(function() {
 
 
 			    /* Portfolio Page */
-			    $('#scoop .black-screen').addClass('animated fadeOut');
+			    $('#nfl .black-screen').addClass('animated fadeOut');
 
-			    $('#scoop .project-info').addClass('animated slideInLeft');
+			    $('#nfl .project-info').addClass('animated slideInRight');
 
-			    autoplay('#scoop .carousel', 4);
+			    autoplay('#nfl .carousel', 4);
 			}
 
 			if (nextIndex == 5) {
