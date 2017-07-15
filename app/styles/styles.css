@@ -429,6 +429,8 @@ rect.animated {
     /*z-index: -1;*/
 
     font-family: "Roboto", Arial, sans-serif;
+
+    cursor: default;
 }
 
 .section-title-small {

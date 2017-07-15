@@ -470,7 +470,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
     image: 'images/roar-logo2.png',
     children: [
       {name: 'Web Development Intern', children : [
-        {name:'Responsive Conversion'},
+        {name:'Responsive Dev'},
         {name:'ASP.NET Dev'},
         {name:'HTML Email Design/Dev'},
       ]

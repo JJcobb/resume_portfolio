@@ -10,15 +10,15 @@ var h = 300;*/
 
 var dataset = [
 	{ 'name': 'JavaScript', 'rank': 6 },
-	{ 'name': 'PHP', 'rank': 4 },
+	{ 'name': 'React', 'rank': 1 },
 	{ 'name': 'CSS', 'rank': 9 },
 	{ 'name': 'Gulp', 'rank': 1 },
    { 'name': 'WordPress', 'rank': 7 },
 	{ 'name': 'jQuery', 'rank': 6 },
-	{ 'name': 'MySQL', 'rank': 7 },
-	{ 'name': 'APIs', 'rank': 1 },
+	{ 'name': 'PHP | MySQL', 'rank': 7 },
+	{ 'name': 'Sass', 'rank': 1 },
 	{ 'name': 'HTML5', 'rank': 10 },
-	{ 'name': 'AJAX', 'rank': 6 },
+	{ 'name': 'APIs', 'rank': 5 },
 	{ 'name': 'Git', 'rank': 1 },
 	{ 'name': 'Photoshop', 'rank': 8 }
 ];
