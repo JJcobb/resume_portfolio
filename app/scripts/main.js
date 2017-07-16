@@ -152,7 +152,7 @@ $(document).ready(function() {
 			    /* Portfolio Page */
 			    $('#scoop .black-screen').addClass('animated fadeOut');
 
-			    $('#scoop .project-info').addClass('animated slideInLeft');
+			    $('#scoop .project-info').addClass('animated slideInRight');
 
 			    autoplay('#scoop .carousel', 3);
 			}
@@ -166,7 +166,7 @@ $(document).ready(function() {
 			    /* Portfolio Page */
 			    $('#nfl .black-screen').addClass('animated fadeOut');
 
-			    $('#nfl .project-info').addClass('animated slideInRight');
+			    $('#nfl .project-info').addClass('animated slideInLeft');
 
 			    autoplay('#nfl .carousel', 4);
 			}
