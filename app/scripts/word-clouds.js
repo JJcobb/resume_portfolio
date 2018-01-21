@@ -11,14 +11,14 @@ var h = 300;*/
 var dataset = [
 	{ 'name': 'JavaScript', 'rank': 6 },
 	{ 'name': 'React', 'rank': 1 },
-	{ 'name': 'CSS', 'rank': 9 },
+	{ 'name': 'WordPress', 'rank': 7 },
 	{ 'name': 'Gulp', 'rank': 1 },
-   { 'name': 'WordPress', 'rank': 7 },
 	{ 'name': 'jQuery', 'rank': 6 },
 	{ 'name': 'PHP | MySQL', 'rank': 7 },
-	{ 'name': 'Sass', 'rank': 1 },
+	{ 'name': 'Express', 'rank': 1 },
 	{ 'name': 'HTML5', 'rank': 10 },
-	{ 'name': 'APIs', 'rank': 5 },
+	{ 'name': 'Nginx', 'rank': 1 },
+	{ 'name': 'CSS | Sass', 'rank': 7 },
 	{ 'name': 'Git', 'rank': 1 },
 	{ 'name': 'Photoshop', 'rank': 8 }
 ];

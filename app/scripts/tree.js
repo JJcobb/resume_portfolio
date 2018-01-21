@@ -446,6 +446,22 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
   org_chart2.placeAt('content');*/
 
 
+  var org_chart = new dennisseah.OrgChart();
+  org_chart.setRoot({
+    name: 'Big Vision',
+    image: 'images/bv-logo.png',
+    children: [
+      {name: 'Jr Developer', children : [
+        {name:'Custom WordPress Dev'},
+        {name:'React.js'},
+        {name:'Express.js'},
+        {name:'Front-end Dev'},
+      ]
+      }
+    ]
+  });
+  org_chart.placeAt('exp1');
+
 
   var org_chart = new dennisseah.OrgChart();
   org_chart.setRoot({
@@ -461,7 +477,7 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
       }
     ]
   });
-  org_chart.placeAt('exp1');
+  org_chart.placeAt('exp2');
 
 
     var org_chart = new dennisseah.OrgChart();
@@ -477,6 +493,6 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
       }
     ]
   });
-  org_chart.placeAt('exp2');
+  org_chart.placeAt('exp3');
 
 });
