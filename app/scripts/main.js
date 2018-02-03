@@ -61,11 +61,9 @@ $(document).ready(function() {
 	    autoplay_intervals.splice(page_index - 2, 0, autoplay_interval);
 
 
-	    console.log('*******************************\nAutoplay internal array:');
-
-	    $.each(autoplay_intervals, function(){
-	    	console.log(this);
-	    });
+	    // $.each(autoplay_intervals, function(){
+	    // 	console.log(this);
+	    // });
 
 	};
 
@@ -79,7 +77,7 @@ $(document).ready(function() {
 		if( autoplay_intervals[page_index-2] != undefined ){
 			clearInterval( autoplay_intervals[page_index-2] );
 
-			console.log('Carousel at index: ' + page_index-2 + ' has been stopped');
+			//console.log('Carousel at index: ' + page_index-2 + ' has been stopped');
 		}
 
 

@@ -166,16 +166,18 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
 
 
           // Determine the appropriate aspect ratio of the image using the image url
-          var img = new Image();
-          img.src = d.image;
-          img.onload = function(){
+          if(d.image) {
 
-              var image_aspect_ratio = this.height / this.width;
+            var img = new Image();
+            img.src = d.image;
+            img.onload = function(){
+  
+                var image_aspect_ratio = this.height / this.width;
+  
+                $(this_image).attr('height', image_width_number*image_aspect_ratio);
+            };
 
-              console.log('image_aspect_ratio: ' + image_aspect_ratio);
-
-              $(this_image).attr('height', image_width_number*image_aspect_ratio);
-          };
+          }
           
 
           return d.image;
@@ -250,12 +252,12 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
           if( $(window).width() < 700 ){
 
             /* Spacing between the nodes below the position title */
-            if(d.name != 'ROAR!' && d.name != 'On Target' && d.name != 'Web Development Intern' && d.name != 'Web Production Asst.'){
+            if(d.name != 'ROAR!' && d.name != 'On Target' && d.name != 'Web Development Intern' && d.name != 'Web Production Asst.' && d.name != 'Jr Developer' && d.name != 'Big Vision'){
               var vertical_spacing = i*60 - 100;
             }
 
             /* Spacing between the position title and the nodes listed below */
-            else if(d.name == 'Web Development Intern' || d.name == 'Web Production Asst.'){
+            else if(d.name == 'Web Development Intern' || d.name == 'Web Production Asst.' || d.name == 'Jr Developer'){
               var vertical_spacing = -50;
             }
             else{
@@ -270,12 +272,12 @@ sap.ui.core.Control.extend('dennisseah.OrgChart', {
           else if( $(window).width() >= 700  &&  $(window).width() < 992 ){
 
             /* Spacing between the nodes below the position title */
-            if(d.name != 'ROAR!' && d.name != 'On Target' && d.name != 'Intern' && d.name != 'Web Production Asst.'){
+            if(d.name != 'ROAR!' && d.name != 'On Target' && d.name != 'Web Development Intern' && d.name != 'Web Production Asst.' && d.name != 'Jr Developer' && d.name != 'Big Vision'){
               var vertical_spacing = i*110 - 20;
             }
 
             /* Spacing between the position title and the nodes listed below */
-            else if(d.name == 'Intern' || d.name == 'Web Production Asst.'){
+            else if(d.name == 'Web Development Intern' || d.name == 'Web Production Asst.' || d.name == 'Jr Developer'){
               var vertical_spacing = -20;
             }
             else{

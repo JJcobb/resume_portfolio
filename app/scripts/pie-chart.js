@@ -137,7 +137,7 @@ var label = d3.select('#dataSelection')
   .data(data)
   .on('change', changeData)
   .filter(function(d, i) {
-  console.log(!i)
+  //console.log(!i)
     return !i;
   })
   .each(changeData)
